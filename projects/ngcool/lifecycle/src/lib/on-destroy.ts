@@ -16,9 +16,11 @@ export function NgOnDestroy() {
         const { onDestroy } = def;
 
         def.onDestroy = function () {
-          that[tokens.destroy].next();
-          that[tokens.destroy].complete();
-          that[tokens.destroy] = null;
+          if (!that[tokens.destroy]) {
+            that[tokens.destroy].next();
+            that[tokens.destroy].complete();
+            that[tokens.destroy] = null;
+          }
 
           onDestroy?.call(this);
         };

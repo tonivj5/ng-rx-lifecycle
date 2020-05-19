@@ -16,14 +16,18 @@ export function NgOnInit() {
         const { onInit, onDestroy } = def;
 
         def.onInit = function () {
-          this[tokens.init].next();
+          if (!that[tokens.init]) {
+            that[tokens.init] = new ReplaySubject<void>(1);
+          }
 
           onInit?.call(this);
         };
 
         def.onDestroy = function () {
-          that[tokens.init].complete();
-          that[tokens.init] = null;
+          if (that[tokens.init]) {
+            that[tokens.init].complete();
+            that[tokens.init] = null;
+          }
 
           onDestroy?.call(this);
         };

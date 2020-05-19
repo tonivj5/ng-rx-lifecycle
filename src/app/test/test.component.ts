@@ -8,6 +8,8 @@ import { NgOnInit, NgOnChanges, NgOnDestroy } from '@ngcool/lifecycle';
   template: `
     {{ onChanges$ | async | json }} <br />
     {{ test$ | async | json }}
+    {{ onInit$ | async }}
+    {{ onDestroy$ | async }}
   `,
 })
 export class TestComponent {
@@ -31,7 +33,6 @@ export class TestComponent {
       next: () => console.log('on init'),
       complete: () => console.log('complete on init'),
     });
-
     this.onDestroy$.subscribe({
       next: () => console.log('on destroy'),
       complete: () => console.log('complete destroy'),
