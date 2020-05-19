@@ -1,0 +1,27 @@
+{
+  "name": "@ngcool/lifecycle",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^9.1.3",
+    "@angular/core": "^9.1.3",
+    "tslib": "^1.10.0"
+  },
+  "keywords": [
+    "angular",
+    "angular 2",
+    "lifecycle",
+    "rxjs"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "none/issue"
+  },
+  "homepage": "none#readme",
+  "repository": {
+    "type": "git",
+    "url": "none"
+  }
+}

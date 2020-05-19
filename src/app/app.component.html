@@ -1,0 +1,3 @@
+<button (click)="show = !show">Toggle</button>
+<br />
+<app-test *ngIf="show" [test]="test$ | async"></app-test>
